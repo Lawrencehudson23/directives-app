@@ -8,11 +8,11 @@
   Secret Password = "Tuna"
 </p>
 <div
-  *ngFor="let i of log"
+  *ngFor="let item of log; let i = index"
   [ngStyle]="{
-    backgroundColor: i > 4 && 'blue'
+    backgroundColor: i >= 4 ? 'blue' : 'transparent'
   }"
-  [ngClass]="{ 'white-text': i > 4 }"
+  [ngClass]="{ 'white-text': i >= 4 }"
 >
-  {{ i }}
+  {{ item }}
 </div>
